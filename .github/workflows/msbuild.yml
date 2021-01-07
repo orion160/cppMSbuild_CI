@@ -26,12 +26,12 @@ jobs:
       run: nuget restore ${{env.SOLUTION_FILE_PATH}}
       
     - name: Setup vcpkg
-        uses: lukka/run-vcpkg@v6
-        with:
-          # Just install vcpkg for now, do not install any ports in this step yet.
-          setupOnly: true
-          # Location of the vcpkg submodule in the Git repository.
-          vcpkgDirectory: '${{ github.workspace }}/vcpkg'
+      uses: lukka/run-vcpkg@v6
+      with:
+        # Just install vcpkg for now, do not install any ports in this step yet.
+        setupOnly: true
+        # Location of the vcpkg submodule in the Git repository.
+        vcpkgDirectory: '${{ github.workspace }}/vcpkg'
 
     - name: Build
       working-directory: ${{env.GITHUB_WORKSPACE}}
