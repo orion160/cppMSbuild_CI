@@ -20,18 +20,9 @@ jobs:
 
     - name: Add MSBuild to PATH
       uses: microsoft/setup-msbuild@v1
-
-    - name: Restore NuGet packages
-      working-directory: ${{env.GITHUB_WORKSPACE}}
-      run: nuget restore ${{env.SOLUTION_FILE_PATH}}
       
-    - name: Setup vcpkg
-      uses: lukka/run-vcpkg@v6
-      with:
-        # Just install vcpkg for now, do not install any ports in this step yet.
-        setupOnly: true
-        # Location of the vcpkg submodule in the Git repository.
-        vcpkgDirectory: '${{ runner.workspace }}/vcpkg'
+    - name: list files
+      run: ls "${{ github.workspace }}" 
 
     - name: Build
       working-directory: ${{env.GITHUB_WORKSPACE}}
