@@ -28,6 +28,8 @@ jobs:
         setupOnly: true
         vcpkgDirectory: '${{ github.workspace }}/vcpkg'
       
+    - name: vcpkg-integrate?
+      run: "${{ github.workspace }}/vcpkg/vcpkg.exe integrate install"
       
     - name: list files
       run: ls "${{ github.workspace }}" 
