@@ -31,7 +31,7 @@ jobs:
         # Just install vcpkg for now, do not install any ports in this step yet.
         setupOnly: true
         # Location of the vcpkg submodule in the Git repository.
-        vcpkgDirectory: '${{ github.workspace }}/vcpkg'
+        vcpkgDirectory: '${{ runner.workspace }}/vcpkg'
 
     - name: Build
       working-directory: ${{env.GITHUB_WORKSPACE}}
