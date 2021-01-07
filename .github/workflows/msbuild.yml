@@ -20,6 +20,12 @@ jobs:
 
     - name: Add MSBuild to PATH
       uses: microsoft/setup-msbuild@v1
+    - name: run-vcpkg
+      uses: lukka/run-vcpkg@v6.0
+      with:
+        setupOnly: true
+        vcpkgDirectory: '${{ github.workspace }}/vcpkg'
+      
       
     - name: list files
       run: ls "${{ github.workspace }}" 
